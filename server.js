@@ -14,7 +14,8 @@ var articleOne = {
                 This is the content of teh first article
             </p>
             <p>
-                This contains all abouot article one
+                This contains all abouot article one.
+                This is done just like that.
             </p>`
 }
 
