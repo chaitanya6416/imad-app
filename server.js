@@ -18,18 +18,6 @@ app.use(morgan('combined'));
 
 
 
-app.get('/test-db', function (req, res) {
-  
-    pool.query('select * from user',function(err,result){
-        if(err){
-            res.status(500).send(err.toString());    
-        }
-        else{
-            res.send(JSON.stringify(result.rows));
-        }
-        
-    })
-});
 
 
 var articles=
@@ -148,6 +136,22 @@ var articleName=req.params.articleName;
 
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+});
+
+
+
+app.get('/test-db', function (req, res) {
+  
+  //sel
+    pool.query('select * from user',function(err,result){
+        if(err){
+            res.status(500).send(err.toString());    
+        }
+        else{
+            res.send(JSON.stringify(result.rows));
+        }
+        
+    })
 });
 
 
